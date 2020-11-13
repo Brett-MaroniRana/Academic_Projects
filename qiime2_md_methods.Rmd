@@ -1,0 +1,40 @@
+---
+title: "Microbiome Analysis: qiime2 - Methods"
+author: "Brett Maroni-Rana"
+date: "2020-11-11"
+output:
+  html_document:
+    toc: true
+    toc_depth: 4
+    toc_float: true
+    dev: 'svg'
+  md_document:
+    variant: gfm
+bibliography: bibliography.ris
+---
+
+# Microbiome Analysis: qiime2
+
+## Overview
+
+Qiime2 [@qiime2] (pronounced "chime") is a powerful bioinformatic tool designed for microbiome data analysis. It provides end to end
+data analysis, from sequence import through scientific paper quality data visualization.  
+
+Running qiime2 creates qiime artifacts and visualizations. Qiime artifacts are denoted by .gza file extension. Qiime visualizations
+are denoted by .gzv file extension. Qiime artifacts are used in downstream processing, usually for further analysis, while visualizations
+are terminal and are designed to be viewed as output. Qiime artifacts contain semantics. This dictate what a particular artifact can do.
+This can be very useful for controlling what analysis is done with what artifacts, minimizing errors and erroneous results. Lastly,
+plugins (software packages) allow for data analysis of qiime artifacts and visualization through the use of methods and visualizers
+found in the plugin.  
+
+## Methods
+ 
+Qiime2 provides documentation guiding new users through tutorials that walk you though the process of microbiome data analysis. 
+
+The first tutorial uses data from [@pictures] that looks at two individuals whom swab four body sites, at five time-points,
+with and without antibiotics. This tutorial walks through each step of qiime2 microbiome data analysis and can be found
+[here](https://docs.qiime2.org/2020.8/tutorials/moving-pictures/#sample-metadata). Two more tutorials, [@fmt] and [@atacama]
+build on the "Moving Pictures" tutorial but cover additional functionalityof qiime2. These can be found 
+[here](https://docs.qiime2.org/2020.8/tutorials/fmt/) and [here](https://docs.qiime2.org/2020.8/tutorials/atacama-soils/). 
+
+### References
