@@ -1,0 +1,52 @@
+---
+title: "Differential Expression using salmon and DESeq2"
+author: "Brett Maroni-Rana"
+date: "2020-10-21"
+output:
+  html_document:
+    toc: true
+    toc_depth: 4
+    toc_float: true
+    dev: 'svg'
+  md_document:
+    variant: gfm
+bibliography: bibliography.ris
+---
+
+# Differential Gene Expression using salmon and DESeq2
+
+## Overview
+
+The two main steps in performing differential expression analysis are to
+estimate the relative abundance of transcripts, and to apply statistical models
+to test for differential expression between treatment groups. Estimating
+relative abundance is basically determining how many NGS reads match a given
+gene within a genome. In this module you'll use Salmon [@Patro] to estimate
+relative abundance, tximport [@Soneson] to import the Salmon abundance
+estimates, and DESeq2 [@Love] to perform statistical tests to identify
+differentially expressed genes. 
+
+## Method
+
+Three main steps took place to produce the results below. 
+First, salmon was used to perform abundance of gene expression estimations 
+on a previously sequenced transcriptome. To do this an index of the de-novo transcriptome 
+was first created. Once the index was created, the left and right reads are aligned
+to the index. This was all done using salmon.
+Second, transcripts were mapped to genes. This was accomplished by merging annotation 
+tables together in R. The transcript BLAST file was merged with a file containing kegg
+elements, then that BLAST and kegg merged file was merged with a ko file. The end result
+is a file with transcripts, kegg and ko elements, all mapped to each other by use of 
+merge functionality in R. 
+Finally, we are ready to process the salmon alignments with DESeq2 to perform differential
+expression. This utilizes DESeq2 algorithm. 
+ 
+
+## Results
+```{r, code=readLines("de.R"), eval=TRUE, include=FALSE}
+```
+```{r}
+knitr::kable(filtered_res, caption = "results")
+```
+
+### References
